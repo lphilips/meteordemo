@@ -1,0 +1,36 @@
+<head>
+  <title>Chat app</title>
+</head>
+
+<body>
+    {{> loginButtons align="right" }}
+    {{> welcome }}
+    {{> messages }}
+    {{> tweets }}
+</body>
+
+<template name="welcome">
+  <div class="container">
+    <h1>Welcome to this marvellous chat app!</h1>
+  </div>
+</template>
+
+<template name="messages">
+  <div class="container">
+    <p>Message: <input type="text" id="message" class="form-control"></p>
+    {{#each messages}}
+       <span class="label label-info">{{name}}</span>
+       {{message}} <br>
+    {{/each}}
+  </div>
+</template>
+
+<template name="tweets">
+  <div class="container">
+    <h2>Tweets with #jsconfbe</h2>
+    {{#each tweets}}
+       <span class="label label-info">{{user}}</span>
+       {{message}} <br>
+    {{/each}}
+  </div>
+</template>
